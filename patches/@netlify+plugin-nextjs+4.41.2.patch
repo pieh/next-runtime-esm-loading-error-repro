@@ -1,0 +1,13 @@
+diff --git a/node_modules/@netlify/plugin-nextjs/lib/templates/handlerUtils.js b/node_modules/@netlify/plugin-nextjs/lib/templates/handlerUtils.js
+index b1d9aee..74dc2f7 100644
+--- a/node_modules/@netlify/plugin-nextjs/lib/templates/handlerUtils.js
++++ b/node_modules/@netlify/plugin-nextjs/lib/templates/handlerUtils.js
+@@ -107,6 +107,8 @@ const augmentFsModule = ({ promises, staticManifest, blobsManifest, pageRoot, ge
+     require('./blobStorage');
+     // ...then monkey-patch it to see if it's requesting a CDN file
+     promises.readFile = (async (file, options) => {
++        Error.stackTraceLimit = Infinity;
++        console.trace(`promises/readFile`, { file })
+         const baseUrl = getBase();
+         // We only care about page files
+         if (file.startsWith(pageRoot)) {
