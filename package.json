@@ -20,6 +20,7 @@
   "homepage": "https://github.com/netlify/next-runtime#readme",
   "dependencies": {
     "next": "14.1.0",
+    "parse-json": "^8.1.0",
     "patch-package": "^8.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
