@@ -1,6 +1,6 @@
-export async function getServerSideProps() {
-  const { default: esmOnlyStuff } = await import("parse-json");
+import esmOnlyStuff from "parse-json";
 
+export async function getServerSideProps() {
   return {
     props: {
       ssr: true,
